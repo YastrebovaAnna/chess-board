@@ -1,0 +1,9 @@
+.square {
+    width: 75px;
+    height: 75px;
+    background-color: rgba(232, 237, 249, 1.00); /* second rgba(183, 192, 216, 1.00) */
+}
+
+.square:hover {
+    background-color: lightblue;
+}
