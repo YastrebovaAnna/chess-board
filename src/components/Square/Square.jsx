@@ -1,8 +1,10 @@
 import './Square.css'
 
-function Square() {
+// eslint-disable-next-line react/prop-types
+function Square({isBlack}) {
+    const squareColorClass = isBlack ? 'black square' : 'white square';
     return <>
-        <div className="square"></div>
+        <div className={`square ${squareColorClass}`}></div>
     </>
 }
 

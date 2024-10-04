@@ -1,10 +1,12 @@
 .square {
     width: 75px;
     height: 75px;
-    background-color: rgba(232, 237, 249, 1.00);
-    border: 1px solid black;
 }
 
-.square:hover {
-    background-color: rgba(183, 192, 216, 1.00);
+.square.black {
+    background-color: black;
+}
+
+.square.white {
+    background-color: white;
 }
