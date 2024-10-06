@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import './Square.css'
 
-// eslint-disable-next-line react/prop-types
 function Square({isBlack, isSelected, onClick}) {
     let squareColorClass = isBlack ? 'black square' : 'white square';
     if (isSelected)
@@ -12,4 +12,9 @@ function Square({isBlack, isSelected, onClick}) {
     );
 }
 
+Square.propTypes = {
+    isBlack: PropTypes.bool.isRequired,
+    isSelected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
+};
 export {Square};

@@ -1,11 +1,9 @@
+import PropTypes from "prop-types";
 import {useState} from 'react'
 import {Row} from './Row';
 import './Board.css'
 
-
-// eslint-disable-next-line react/prop-types
 function Board({initialBoard}) {
-
     const [selectedSquare, setSelectedSquare] = useState(null);
 
     const handleSquareClick = (rowIndex, colIndex) => {
@@ -14,7 +12,6 @@ function Board({initialBoard}) {
 
     return (
         <div className="Board">
-            {/* eslint-disable-next-line react/prop-types */}
             {initialBoard.map((row, rowIndex) => (
                 <Row
                     key={rowIndex}
@@ -28,4 +25,7 @@ function Board({initialBoard}) {
     );
 }
 
+Board.propTypes = {
+    initialBoard: PropTypes.arrayOf(PropTypes.array).isRequired,
+};
 export default Board;

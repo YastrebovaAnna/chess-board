@@ -1,14 +1,12 @@
+import PropTypes from "prop-types";
 import {Square} from "../Square/Square.jsx";
 
-// eslint-disable-next-line react/prop-types
 function Row({row, rowIndex, selectedSquare, onSquareClick}) {
     const isBlackSquare = (rowIndex, colIndex) => (rowIndex + colIndex) % 2 === 0;
     return (
         <div>
-            {/* eslint-disable-next-line react/prop-types */}
             {row.map((_, colIndex) => {
                 const isBlack = isBlackSquare(rowIndex, colIndex);
-                // eslint-disable-next-line react/prop-types
                 const isSelected = selectedSquare?.row === rowIndex && selectedSquare?.col === colIndex;
                 return (
                     <Square
@@ -22,5 +20,15 @@ function Row({row, rowIndex, selectedSquare, onSquareClick}) {
         </div>
     );
 }
+
+Row.propTypes = {
+    row: PropTypes.array.isRequired,
+    rowIndex: PropTypes.number.isRequired,
+    selectedSquare: PropTypes.shape({
+        row: PropTypes.number,
+        col: PropTypes.number,
+    }),
+    onSquareClick: PropTypes.func.isRequired,
+};
 
 export {Row};
